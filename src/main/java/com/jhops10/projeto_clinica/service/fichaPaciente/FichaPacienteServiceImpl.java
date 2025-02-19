@@ -2,10 +2,12 @@ package com.jhops10.projeto_clinica.service.fichaPaciente;
 
 import com.jhops10.projeto_clinica.model.FichaPaciente;
 import com.jhops10.projeto_clinica.repository.FichaPacienteRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
 
+@Service
 public class FichaPacienteServiceImpl implements IFichaPacienteService {
 
     private final FichaPacienteRepository pacienteRepository;
