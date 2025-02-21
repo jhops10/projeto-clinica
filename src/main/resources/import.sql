@@ -1,0 +1,1 @@
+insert into tbl_fichapaciente (id_paciente, nome, data_nasc, sexo, uuid) values(1, 'Joao Paulo', '1991-01-01', 'M', 'abc')
