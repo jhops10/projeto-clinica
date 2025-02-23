@@ -1,8 +1,10 @@
 package com.jhops10.projeto_clinica.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "tbl_fichapaciente")
@@ -72,6 +74,10 @@ public class FichaPaciente {
 
     @Column(name = "ativo")
     private Integer ativo;
+
+    @OneToMany(mappedBy = "ficha", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("ficha")
+    private List<Midia> midias;
 
 
 
@@ -241,5 +247,13 @@ public class FichaPaciente {
 
     public void setAtivo(Integer ativo) {
         this.ativo = ativo;
+    }
+
+    public List<Midia> getMidias() {
+        return midias;
+    }
+
+    public void setMidias(List<Midia> midias) {
+        this.midias = midias;
     }
 }
