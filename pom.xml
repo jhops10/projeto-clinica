@@ -64,6 +64,14 @@
 		</dependency>
 		<!--Dependência do H2 (Para Testes)-->
 
+		<!--Spring Security-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<!--Spring Security-->
+
+
 	</dependencies>
 
 	<build>
