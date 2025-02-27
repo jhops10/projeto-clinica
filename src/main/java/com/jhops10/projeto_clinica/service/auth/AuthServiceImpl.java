@@ -3,6 +3,7 @@ package com.jhops10.projeto_clinica.service.auth;
 import com.jhops10.projeto_clinica.model.Usuario;
 import com.jhops10.projeto_clinica.repository.UsuarioRepository;
 import com.jhops10.projeto_clinica.security.ClinicaToken;
+import com.jhops10.projeto_clinica.security.TokenUtil;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,7 @@ public class AuthServiceImpl implements IAuthService {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         if (res != null) {
             if (encoder.matches(dadosUsuario.getSenha(), res.getSenha())) {
-                return new ClinicaToken("*clinica123");
+                return TokenUtil.encode(res);
             }
         }
         return null;
